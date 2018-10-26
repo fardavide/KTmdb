@@ -1,0 +1,4 @@
+include ':api', ':entities', ':services'
+
+// TODO blocked by https://github.com/Kotlin/kotlinx.coroutines/issues/564
+//enableFeaturePreview('GRADLE_METADATA')

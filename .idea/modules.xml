@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KTmdb.iml" filepath="$PROJECT_DIR$/.idea/modules/KTmdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_commonMain.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_commonTest.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_jsMain.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_jsTest.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_jvmMain.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/api_jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/api/api_jvmTest.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_commonMain.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_commonTest.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_jsMain.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_jsTest.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_jvmMain.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/entities_jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/entities_jvmTest.iml" group="entities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_commonMain.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_commonTest.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_jsMain.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_jsTest.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_jvmMain.iml" group="services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/services_jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/services/services_jvmTest.iml" group="services" />
+    </modules>
+  </component>
+</project>

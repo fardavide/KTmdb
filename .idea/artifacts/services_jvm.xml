@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="services-jvm">
+    <output-path>$PROJECT_DIR$/services/build/libs</output-path>
+    <root id="archive" name="services-jvm.jar">
+      <element id="module-output" name="services_jvmMain" />
+    </root>
+  </artifact>
+</component>

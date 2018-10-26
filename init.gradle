@@ -1,0 +1,12 @@
+initscript {
+  dependencies {
+    classpath files('gradle/chrome-trace.jar')
+  }
+}
+
+rootProject {
+  def date = new java.text.SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date())
+  ext.chromeTraceFile = new File(rootProject.buildDir, "reports/trace/trace-${date}.html")
+}
+
+apply plugin: org.gradle.trace.GradleTracingPlugin

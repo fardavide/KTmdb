@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="presentation-binder-js">
+    <output-path>$PROJECT_DIR$/presentation/binder/build/libs</output-path>
+    <root id="archive" name="presentation-binder-js.jar">
+      <element id="module-output" name="binder_jsMain" />
+    </root>
+  </artifact>
+</component>

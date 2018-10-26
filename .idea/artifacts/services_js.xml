@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="services-js">
+    <output-path>$PROJECT_DIR$/services/build/libs</output-path>
+    <root id="archive" name="services-js.jar">
+      <element id="module-output" name="services_jsMain" />
+    </root>
+  </artifact>
+</component>

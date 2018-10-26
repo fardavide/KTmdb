@@ -1,0 +1,67 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'kotlinx-serialization'
+
+archivesBaseName = 'api'
+
+// TODO work around https://youtrack.jetbrains.com/issue/KT-27170
+configurations {
+  compileClasspath
+}
+
+kotlin {
+  sourceSets {
+
+    commonMain {
+      dependencies {
+        api project(':entities')
+        api project(':services')
+        api deps.kotlin.stdlib.common
+        api deps.kotlin.coroutines.common
+        api deps.kotlin.serialization.common
+        api deps.kotlin.ktorCore.common
+        api deps.kotlin.ktorClient.common
+      }
+    }
+    commonTest {
+      dependencies {
+        api deps.kotlin.test.common
+        api deps.kotlin.test.annotations
+      }
+    }
+
+    jsMain {
+      dependencies {
+        api deps.kotlin.stdlib.js
+        api deps.kotlin.coroutines.js
+        api deps.kotlin.serialization.js
+        api deps.kotlin.ktorCore.js
+        api deps.kotlin.ktorClient.js
+      }
+    }
+    jsTest {
+      dependencies {
+        api deps.kotlin.test.js
+      }
+    }
+
+    jvmMain {
+      dependencies {
+        api deps.kotlin.stdlib.jdk
+        api deps.kotlin.coroutines.jdk
+        api deps.kotlin.serialization.jdk
+        api deps.kotlin.ktorCore.jdk
+        api deps.kotlin.ktorClient.jdk
+      }
+    }
+    jvmTest {
+      dependencies {
+        api deps.kotlin.test.jdk
+      }
+    }
+  }
+
+  targets {
+    fromPreset(presets.js, 'js')
+    fromPreset(presets.jvm, 'jvm')
+  }
+}

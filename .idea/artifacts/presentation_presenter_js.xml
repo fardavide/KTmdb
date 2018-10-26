@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="presentation-presenter-js">
+    <output-path>$PROJECT_DIR$/presentation/presenter/build/libs</output-path>
+    <root id="archive" name="presentation-presenter-js.jar">
+      <element id="module-output" name="presentation-presenter_jsMain" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,141 @@
+buildscript {
+  ext.buildConfig = [
+      'version': [
+          'major': 0,
+          'minor': 1,
+          'patch': 0,
+      ],
+  ]
+  ext.buildConfig.version['name'] = "${buildConfig.version.major}.${buildConfig.version.minor}.${buildConfig.version.patch}"
+  ext.buildConfig.version['code'] = buildConfig.version.major * 10000 + buildConfig.version.minor * 100 + buildConfig.version.patch * 1
+
+  ext.versions = [
+      kotlin:                         '1.3.0-rc-190',
+      kotlinCoroutines:               '1.0.0-RC1',
+      kotlinSerialization:            '0.8.3-rc13',
+      ktor:                           '1.0.0-beta-2',
+      timber:                         '5.0.0-SNAPSHOT',
+  ]
+
+  ext.deps = [
+      kotlin: [
+          stdlib: [
+              common:                 "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
+              jdk:                    "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+              js:                     "org.jetbrains.kotlin:kotlin-stdlib-js:${versions.kotlin}",
+          ],
+          test: [
+              common:                 "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
+              annotations:            "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
+              jdk:                    "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+              js:                     "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
+          ],
+          coroutines: [
+              common:                 "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
+              jdk:                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
+              jdk8:                   "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
+              js:                     "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${versions.kotlinCoroutines}",
+          ],
+          serialization: [
+              common:                 "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${versions.kotlinSerialization}",
+              jdk:                    "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
+              js:                     "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
+          ],
+          ktorCore: [
+              common:                 "io.ktor:ktor-client-core:$versions.ktor",
+              jdk:                    "io.ktor:ktor-client-core-jvm:$versions.ktor",
+              js:                     "io.ktor:ktor-client-core-js:$versions.ktor",
+          ],
+          ktorClient: [
+              common:                 "io.ktor:ktor-client:$versions.ktor",
+              jdk:                    "io.ktor:ktor-client-jvm:$versions.ktor",
+              js:                     "io.ktor:ktor-client-js:$versions.ktor",
+          ],
+      ],
+      timber: [
+          common:                     "com.jakewharton.timber:timber-common:$versions.timber",
+          jdk:                        "com.jakewharton.timber:timber-jdk:$versions.timber",
+          js:                         "com.jakewharton.timber:timber-js:$versions.timber",
+      ],
+      junit:                          'junit:junit:4.12',
+      truth:                          'com.google.truth:truth:0.42',
+      argparser:                      'com.xenomachina:kotlin-argparser:2.0.5',
+      byteunits:                      'com.jakewharton.byteunits:byteunits:0.9.1',
+  ]
+
+
+  repositories {
+    mavenCentral()
+    google()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    gradlePluginPortal()
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    classpath "org.jetbrains.kotlin:kotlin-serialization:${versions.kotlin}"
+    classpath 'org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.37'
+    classpath 'gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:5.0.0'
+    classpath 'com.moowork.gradle:gradle-node-plugin:1.2.0'
+  }
+}
+
+allprojects {
+  apply plugin: 'org.jlleitschuh.gradle.ktlint'
+
+  repositories {
+    mavenCentral()
+    google()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url "https://kotlin.bintray.com/ktor" }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    jcenter()
+  }
+
+  configurations.all {
+    resolutionStrategy {
+      eachDependency { details ->
+        // Force all Kotlin stdlib artifacts to use the same version.
+        if (details.requested.group == 'org.jetbrains.kotlin'
+            && details.requested.name.startsWith('kotlin-stdlib')) {
+          details.useVersion versions.kotlin
+        }
+      }
+    }
+  }
+
+  // TODO this hasn't landed in the compiler yet
+  //afterEvaluate {
+  //  def kotlin = extensions.findByName('kotlin')
+  //  if (kotlin != null) {
+  //    kotlin.experimental {
+  //      newInference 'enable'
+  //    }
+  //  }
+  //}
+
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+      freeCompilerArgs = [
+          '-progressive'
+      ]
+    }
+  }
+
+  tasks.withType(Test) {
+    testLogging {
+      events "skipped", "failed", "passed"
+    }
+  }
+  // TODO same thing for instrumentation tests: https://issuetracker.google.com/issues/37056080
+  //tasks.withType(AndroidTestTask) {
+  //  testLogging {
+  //    events "skipped", "failed", "passed"
+  //  }
+  //}
+}
+
+apply from: file('gradle/projectDependencyGraph.gradle')
