@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="references-jvm">
-    <output-path>$PROJECT_DIR$/references/build/libs</output-path>
-    <root id="archive" name="references-jvm.jar">
-      <element id="module-output" name="references_jvmMain" />
-    </root>
-  </artifact>
-</component>

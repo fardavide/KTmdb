@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":jdk" external.linked.project.path="$MODULE_DIR$/../../../jdk" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="KTmdb" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../jdk">
+      <excludeFolder url="file://$MODULE_DIR$/../../../jdk/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../jdk/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../jdk/out" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

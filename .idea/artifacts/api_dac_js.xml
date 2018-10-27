@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="api-dac-js">
-    <output-path>$PROJECT_DIR$/api/dac/build/libs</output-path>
-    <root id="archive" name="api-dac-js.jar">
-      <element id="module-output" name="dac_jsMain" />
-    </root>
-  </artifact>
-</component>

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="references-js">
-    <output-path>$PROJECT_DIR$/references/build/libs</output-path>
-    <root id="archive" name="references-js.jar">
-      <element id="module-output" name="references_jsMain" />
-    </root>
-  </artifact>
-</component>

@@ -2,30 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="api_jvmMain" target="1.6" />
-      <module name="api_jvmTest" target="1.6" />
-      <module name="binder_jvmMain" target="1.6" />
-      <module name="binder_jvmTest" target="1.6" />
-      <module name="circleci_main" target="1.8" />
-      <module name="circleci_test" target="1.8" />
-      <module name="dac_jvmMain" target="1.6" />
-      <module name="dac_jvmTest" target="1.6" />
-      <module name="entities_jvmMain" target="1.6" />
-      <module name="entities_jvmTest" target="1.6" />
-      <module name="jdk-temp_main" target="1.8" />
-      <module name="jdk-temp_test" target="1.8" />
-      <module name="legacy-printer_main" target="1.8" />
-      <module name="legacy-printer_test" target="1.8" />
-      <module name="presentation-presenter_jvmMain" target="1.6" />
-      <module name="presentation-presenter_jvmTest" target="1.6" />
-      <module name="references_jvmMain" target="1.6" />
-      <module name="references_jvmTest" target="1.6" />
-      <module name="services_jvmMain" target="1.6" />
-      <module name="services_jvmTest" target="1.6" />
-      <module name="sqldelight-coroutines-extensions_main" target="1.8" />
-      <module name="sqldelight-coroutines-extensions_test" target="1.8" />
-      <module name="validator_main" target="1.8" />
-      <module name="validator_test" target="1.8" />
+      <module name="common_main" target="1.8" />
+      <module name="common_test" target="1.8" />
+      <module name="jdk_main" target="1.8" />
+      <module name="jdk_test" target="1.8" />
+      <module name="js_main" target="1.8" />
+      <module name="js_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

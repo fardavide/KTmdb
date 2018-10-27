@@ -1,0 +1,18 @@
+apply plugin: 'org.jetbrains.kotlin.platform.jvm'
+apply plugin: 'kotlinx-serialization'
+
+archivesBaseName = 'ktmdb'
+
+dependencies {
+  expectedBy project(':common')
+
+  implementation deps.kotlin.stdlib.jdk
+  implementation deps.kotlin.coroutines.jdk
+  implementation deps.kotlin.serialization.jdk
+  implementation deps.kotlin.ktorClientCore.jdk
+  implementation deps.kotlin.ktorClient.jdkApache
+
+  testImplementation deps.kotlin.test.jdk
+}
+
+//apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

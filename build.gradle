@@ -1,66 +1,67 @@
 buildscript {
   ext.buildConfig = [
-      'version': [
-          'major': 0,
-          'minor': 1,
-          'patch': 0,
-      ],
+    'version': [
+      'major':    0,
+      'minor':    1,
+      'patch':    0,
+    ],
   ]
   ext.buildConfig.version['name'] = "${buildConfig.version.major}.${buildConfig.version.minor}.${buildConfig.version.patch}"
   ext.buildConfig.version['code'] = buildConfig.version.major * 10000 + buildConfig.version.minor * 100 + buildConfig.version.patch * 1
 
   ext.versions = [
-      kotlin:                         '1.3.0-rc-190',
-      kotlinCoroutines:               '1.0.0-RC1',
-      kotlinSerialization:            '0.8.3-rc13',
-      ktor:                           '1.0.0-beta-2',
-      timber:                         '5.0.0-SNAPSHOT',
+    kotlin:                     '1.3.0-rc-190',
+    kotlinCoroutines:           '1.0.0-RC1',
+    kotlinSerialization:        '0.8.3-rc13',
+    ktor:                       '1.0.0-beta-1',
+    timber:                     '5.0.0-SNAPSHOT',
   ]
 
   ext.deps = [
-      kotlin: [
-          stdlib: [
-              common:                 "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
-              jdk:                    "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
-              js:                     "org.jetbrains.kotlin:kotlin-stdlib-js:${versions.kotlin}",
-          ],
-          test: [
-              common:                 "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
-              annotations:            "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
-              jdk:                    "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
-              js:                     "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
-          ],
-          coroutines: [
-              common:                 "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
-              jdk:                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
-              jdk8:                   "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
-              js:                     "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${versions.kotlinCoroutines}",
-          ],
-          serialization: [
-              common:                 "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${versions.kotlinSerialization}",
-              jdk:                    "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
-              js:                     "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
-          ],
-          ktorCore: [
-              common:                 "io.ktor:ktor-client-core:$versions.ktor",
-              jdk:                    "io.ktor:ktor-client-core-jvm:$versions.ktor",
-              js:                     "io.ktor:ktor-client-core-js:$versions.ktor",
-          ],
-          ktorClient: [
-              common:                 "io.ktor:ktor-client:$versions.ktor",
-              jdk:                    "io.ktor:ktor-client-jvm:$versions.ktor",
-              js:                     "io.ktor:ktor-client-js:$versions.ktor",
-          ],
+    kotlin: [
+      stdlib: [
+        common:                 "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
+        jdk:                    "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+        js:                     "org.jetbrains.kotlin:kotlin-stdlib-js:${versions.kotlin}",
       ],
-      timber: [
-          common:                     "com.jakewharton.timber:timber-common:$versions.timber",
-          jdk:                        "com.jakewharton.timber:timber-jdk:$versions.timber",
-          js:                         "com.jakewharton.timber:timber-js:$versions.timber",
+      test: [
+        common:                 "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
+        annotations:            "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
+        jdk:                    "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+        js:                     "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
       ],
-      junit:                          'junit:junit:4.12',
-      truth:                          'com.google.truth:truth:0.42',
-      argparser:                      'com.xenomachina:kotlin-argparser:2.0.5',
-      byteunits:                      'com.jakewharton.byteunits:byteunits:0.9.1',
+      coroutines: [
+        common:                 "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
+        jdk:                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
+        jdk8:                   "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
+        js:                     "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${versions.kotlinCoroutines}",
+      ],
+      serialization: [
+        common:                 "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${versions.kotlinSerialization}",
+        jdk:                    "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
+        js:                     "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
+      ],
+      ktorClient: [
+        common:                 "io.ktor:ktor-client:$versions.ktor",
+        jdk:                    "io.ktor:ktor-client-jvm:$versions.ktor",
+        jdkApache:              "io.ktor:ktor-client-apache:$versions.ktor",
+        js:                     "io.ktor:ktor-client-js:$versions.ktor",
+      ],
+      ktorClientCore: [
+        common:                 "io.ktor:ktor-client-core:$versions.ktor",
+        jdk:                    "io.ktor:ktor-client-core-jvm:$versions.ktor",
+        js:                     "io.ktor:ktor-client-core-js:$versions.ktor",
+      ],
+    ],
+    timber: [
+      common:                   "com.jakewharton.timber:timber-common:$versions.timber",
+      jdk:                      "com.jakewharton.timber:timber-jdk:$versions.timber",
+      js:                       "com.jakewharton.timber:timber-js:$versions.timber",
+    ],
+    junit:                          'junit:junit:4.12',
+    truth:                          'com.google.truth:truth:0.42',
+    argparser:                      'com.xenomachina:kotlin-argparser:2.0.5',
+    byteunits:                      'com.jakewharton.byteunits:byteunits:0.9.1',
   ]
 
 
@@ -100,7 +101,7 @@ allprojects {
       eachDependency { details ->
         // Force all Kotlin stdlib artifacts to use the same version.
         if (details.requested.group == 'org.jetbrains.kotlin'
-            && details.requested.name.startsWith('kotlin-stdlib')) {
+                && details.requested.name.startsWith('kotlin-stdlib')) {
           details.useVersion versions.kotlin
         }
       }
@@ -120,7 +121,7 @@ allprojects {
   tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
       freeCompilerArgs = [
-          '-progressive'
+              '-progressive'
       ]
     }
   }

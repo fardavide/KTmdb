@@ -1,0 +1,53 @@
+apply plugin: 'org.jetbrains.kotlin.platform.js'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'com.moowork.node'
+
+archivesBaseName = 'ktmdb'
+
+dependencies {
+  expectedBy project(':common')
+
+  implementation deps.kotlin.stdlib.js
+  implementation deps.kotlin.coroutines.js
+  implementation deps.kotlin.serialization.js
+  implementation deps.kotlin.ktorClientCore.js
+
+  testImplementation deps.kotlin.test.js
+}
+
+task populateNodeModules(type: Copy, dependsOn: compileKotlin2Js) {
+  from compileKotlin2Js.destinationDir
+  configurations.testCompileClasspath.each {
+    from zipTree(it.absolutePath).matching { include '*.js' }
+  }
+
+  into "${buildDir}/node_modules"
+}
+
+compileKotlin2Js {
+  kotlinOptions.moduleKind = 'umd'
+  kotlinOptions.sourceMap = true
+  kotlinOptions.metaInfo = true
+}
+
+compileTestKotlin2Js {
+  kotlinOptions.moduleKind = 'commonjs'
+  kotlinOptions.sourceMap = true
+}
+
+node {
+  download = true
+}
+
+task installMocha(type: NpmTask) {
+  args = ['install', 'mocha']
+}
+
+task runMocha(type: NodeTask, dependsOn: [compileTestKotlin2Js, populateNodeModules, installMocha]) {
+  script = file('node_modules/mocha/bin/mocha')
+  args = [compileTestKotlin2Js.outputFile]
+}
+
+test.dependsOn(runMocha)
+
+//apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
