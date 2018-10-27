@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cfe80d-fdaa-490d-8d74-4fe35e0dc433" name="Default Changelist" comment="" />
+    <list default="true" id="42cfe80d-fdaa-490d-8d74-4fe35e0dc433" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_serialization_runtime_0_8_3_rc13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_serialization_runtime_common_0_8_3_rc13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_serialization_runtime_js_0_8_3_rc13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/common_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/common_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/common_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/common_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/jdk/jdk_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jdk/jdk_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/jdk/jdk_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jdk/jdk_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/js/js_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/js/js_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/js/js_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/js/js_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/GenreTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/ProjectTests.kt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -34,17 +49,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="KTmdb" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="KTmdb" type="f1a62948:ProjectNode" />
-                <item name=":jdk" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="KTmdb" type="f1a62948:ProjectNode" />
-                <item name=":jdk" type="2d1252cf:ModuleNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
               </path>
             </expand>
             <select />
@@ -101,41 +105,50 @@
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.spring.boot.mvc.usages" />
     </session>
+    <session id="1148985723">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="1" />
+          <entry key="kt" value="179" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Groovy" value="1" />
+          <entry key="Kotlin" value="179" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jdk/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="294">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -143,11 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApiImpl.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
+            <state relative-caret-position="399">
               <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-              <folding>
-                <element signature="e#34#194#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -162,13 +172,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/GenreTest.kt">
+        <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/ProjectTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-              <folding>
-                <element signature="e#39#133#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="452">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -185,10 +192,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/api/TmdbApiTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="315">
               <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="e#34#204#0" expanded="true" />
@@ -205,6 +212,9 @@
         <option value="Kotlin File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -1105,9 +1115,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="12315566607000" />
+        <entry key="$PROJECT_DIR$" value="12315594005000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="2469250929" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3890941299" />
         <entry key="$PROJECT_DIR$/common/build.gradle" value="4216634208" />
         <entry key="$PROJECT_DIR$/gradle.properties" value="0" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1601789844" />
@@ -1514,11 +1524,13 @@
         <option value="$PROJECT_DIR$/jdk/build.gradle" />
         <option value="$PROJECT_DIR$/js/build.gradle" />
         <option value="$PROJECT_DIR$/common/build.gradle" />
-        <option value="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/GenreTest.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/services/MoviesService.kt" />
         <option value="$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApiImpl.kt" />
         <option value="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/api/TmdbApiTest.kt" />
+        <option value="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/GenreTest.kt" />
+        <option value="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/ProjectTests.kt" />
+        <option value="$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/ProjectTests.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -1544,73 +1556,53 @@
           <expand>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1618,39 +1610,19 @@
             </path>
             <path>
               <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="KTmdb" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KTmdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTmdb test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="common" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ktmdb" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1659,7 +1631,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540638028314" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540651306815" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1669,6 +1641,9 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="studio.forface.ktmdb.entities" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="studio.forface.ktmdb" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -1689,7 +1664,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TmdbApiTest.getMovie [jdk]">
+  <component name="RunManager" selected="JUnit.ProjectTests.testingMultiplatformCode_canSerialize [jdk]">
     <configuration name="main1" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="main1" />
       <option name="DEPLOY" value="true" />
@@ -1748,6 +1723,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProjectTests [jdk]" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="jdk_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="studio.forface.ktmdb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="studio.forface.ktmdb" />
+      <option name="MAIN_CLASS_NAME" value="studio.forface.ktmdb.ProjectTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="jdk_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="studio.forface.ktmdb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="studio.forface.ktmdb" />
+      <option name="MAIN_CLASS_NAME" value="studio.forface.ktmdb.ProjectTests" />
+      <option name="METHOD_NAME" value="testingMultiplatformCode_canSerialize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TmdbApiTest.getMovie [jdk]" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="jdk_test" />
       <extension name="coverage">
@@ -1769,12 +1774,16 @@
       <item itemvalue="JUnit.GenreTest.testingMultiplatformCode_runsCorrectly [jdk]" />
       <item itemvalue="JUnit.TmdbApiTest.getMovie [jdk]" />
       <item itemvalue="JUnit.GenreTest.canSerialize [jdk]" />
+      <item itemvalue="JUnit.ProjectTests.testingMultiplatformCode_canSerialize [jdk]" />
+      <item itemvalue="JUnit.ProjectTests [jdk]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TmdbApiTest.getMovie [jdk]" />
+        <item itemvalue="JUnit.ProjectTests.testingMultiplatformCode_canSerialize [jdk]" />
+        <item itemvalue="JUnit.ProjectTests [jdk]" />
+        <item itemvalue="JUnit.ProjectTests.testingMultiplatformCode_canSerialize [jdk]" />
         <item itemvalue="JUnit.GenreTest.canSerialize [jdk]" />
-        <item itemvalue="JUnit.GenreTest.testingMultiplatformCode_runsCorrectly [jdk]" />
+        <item itemvalue="JUnit.TmdbApiTest.getMovie [jdk]" />
       </list>
     </recent_temporary>
   </component>
@@ -1794,49 +1803,51 @@
       <workItem from="1540634383388" duration="771000" />
       <workItem from="1540635201947" duration="232000" />
       <workItem from="1540635451891" duration="2319000" />
+      <workItem from="1540638167750" duration="1080000" />
+      <workItem from="1540648889597" duration="1198000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TmdbApiTest_getMovie_[jdk] - 2018.10.27 at 12h 41m 37s.xml">
-      <configuration name="TmdbApiTest.getMovie [jdk]" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TmdbApiTest_getMovie_[jdk] - 2018.10.27 at 12h 42m 24s.xml">
-      <configuration name="TmdbApiTest.getMovie [jdk]" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TmdbApiTest_getMovie_[jdk] - 2018.10.27 at 12h 46m 03s.xml">
-      <configuration name="TmdbApiTest.getMovie [jdk]" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 47m 24s.xml">
+    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 13h 07m 55s.xml">
       <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 48m 28s.xml">
-      <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 13h 11m 23s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 48m 38s.xml">
-      <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 13h 11m 31s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 49m 02s.xml">
-      <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 16h 00m 59s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 51m 41s.xml">
-      <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_[jdk] - 2018.10.27 at 16h 02m 18s.xml">
+      <configuration name="ProjectTests [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GenreTest_canSerialize_[jdk] - 2018.10.27 at 12h 53m 29s.xml">
-      <configuration name="GenreTest.canSerialize [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_[jdk] - 2018.10.27 at 16h 08m 24s.xml">
+      <configuration name="ProjectTests [jdk]" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TmdbApiTest_getMovie_[jdk] - 2018.10.27 at 12h 58m 32s.xml">
-      <configuration name="TmdbApiTest.getMovie [jdk]" configurationId="JUnit" />
+    <history-entry file="ProjectTests_[jdk] - 2018.10.27 at 16h 17m 07s.xml">
+      <configuration name="ProjectTests [jdk]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 16h 29m 31s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 16h 32m 38s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProjectTests_testingMultiplatformCode_canSerialize_[jdk] - 2018.10.27 at 16h 41m 29s.xml">
+      <configuration name="ProjectTests.testingMultiplatformCode_canSerialize [jdk]" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6228000" />
+    <option name="totallyTimeSpent" value="8506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17765568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -1847,7 +1858,7 @@
       <window_info id="UI Designer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32987553" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32987553" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1855,7 +1866,7 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.29045644" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32987553" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32987553" />
       <window_info anchor="bottom" id="Logcat" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
@@ -1911,13 +1922,6 @@
     <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/timber/log/Timber.kt" />
     <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/timber/log/Tree.kt" />
     <entry file="file://$PROJECT_DIR$/timber/build.gradle" />
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core-jvm/1.0.0-beta-1/9c2b2d850f00f4cb1bc9cc1c5eef69d951e9e9b2/ktor-client-core-jvm-1.0.0-beta-1-sources.jar!/io/ktor/client/HttpClientJvm.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1932,16 +1936,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/PeriodicCallerImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/PeriodicCallerImpl.kt" />
     <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1977,13 +1972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime/0.8.3-rc13/a5f4643e0b69acaf9213a64d681e54a8582080c1/kotlinx-serialization-runtime-0.8.3-rc13-sources.jar!/kotlinx/serialization/PlatformUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1991,7 +1979,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/build.gradle">
+    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
@@ -2005,17 +2000,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
+        <state relative-caret-position="84">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApi.kt">
+    <entry file="file://$PROJECT_DIR$/common/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="21">
+          <caret line="1" column="25" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApiImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/services/MoviesService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -2029,40 +2038,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/entities/GenreTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="e#39#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/services/MoviesService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/kotlin/studio/forface/ktmdb/api/TmdbApiImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#34#194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/api/TmdbApiTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="315">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="e#34#204#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/test/kotlin/studio/forface/ktmdb/ProjectTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -2118,7 +2114,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>jdk_main|jdk</last-edited>
+          <last-edited>common_test|common</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
