@@ -2,7 +2,7 @@ apply plugin: 'org.jetbrains.kotlin.platform.js'
 apply plugin: 'kotlinx-serialization'
 apply plugin: 'com.moowork.node'
 
-archivesBaseName = 'ktmdb'
+archivesBaseName = 'ktmdb-js'
 
 dependencies {
   expectedBy project(':common')

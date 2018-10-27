@@ -3,6 +3,7 @@ package studio.forface.ktmdb
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JSON
+import kotlinx.serialization.serializer
 import studio.forface.ktmdb.entities.Genre
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -24,7 +25,8 @@ class ProjectTests {
 
     @Test
     fun testingMultiplatformCode_canSerialize() {
-        JSON.stringify( ASimpleClass(1 ) )
+        val s = JSON.stringify( ASimpleClass(1 ) )
+        println( s )
     }
 }
 

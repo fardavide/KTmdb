@@ -8,12 +8,14 @@ import studio.forface.ktmdb.services.MoviesService
 interface TmdbApi {
 
     companion object {
-        fun createInstance( baseUrl: String, apiKey: String ) = TmdbApiImpl( baseUrl, apiKey )
+        const val BASE_URL = "https://api.themoviedb.org"
+
+        fun createInstance( apiKey: String) = TmdbApiImpl( apiKey,true )
     }
 
-    val baseUrl: String
-
     val apiKey: String
+
+    val logging: Boolean
 
     val movies: MoviesService
 }

@@ -9,20 +9,29 @@ import studio.forface.ktmdb.services.MoviesService
 /**
  * @author Davide Giuseppe Farella.
  */
-class TmdbApiImpl internal constructor( override val baseUrl: String, override val apiKey: String ): TmdbApi {
+class TmdbApiImpl internal constructor( override val apiKey: String, override val logging: Boolean = false ): TmdbApi {
 
     private val client = HttpClient()
 
     override val movies: MoviesService by lazy {
         object : MoviesService {
 
-            override suspend fun details( movieId: Int ): Movie {
-                val response = client.get<String>("$baseUrl/3/movie/$movieId?api_key=$apiKey" )
-                return JSON.parse( response )
+            override suspend fun testDetailsString( movieId: Int ): String {
+                val url = "${TmdbApi.BASE_URL}/$version/$endpoint/$movieId?api_key=$apiKey"
+                if ( logging )
+                    println( url )
+
+                return client.get( url )
             }
 
-            override suspend fun testDetailsString( movieId: Int ) =
-                    client.get<String>("$baseUrl/3/movie/$movieId?api_key=$apiKey" )
+            override suspend fun details( movieId: Int ): Movie {
+                val url = "${TmdbApi.BASE_URL}/$version/$endpoint/$movieId?api_key=$apiKey"
+                if ( logging )
+                    println( url )
+
+                val response = client.get<String>( url )
+                return JSON.parse( response )
+            }
         }
     }
 }

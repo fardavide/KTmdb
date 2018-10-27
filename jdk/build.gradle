@@ -1,7 +1,7 @@
 apply plugin: 'org.jetbrains.kotlin.platform.jvm'
 apply plugin: 'kotlinx-serialization'
 
-archivesBaseName = 'ktmdb'
+archivesBaseName = 'ktmdb-jvm'
 
 dependencies {
   expectedBy project(':common')

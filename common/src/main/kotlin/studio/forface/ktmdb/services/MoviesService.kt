@@ -1,14 +1,19 @@
 package studio.forface.ktmdb.services
 
+import studio.forface.ktmdb.api.ApiVersion
 import studio.forface.ktmdb.entities.Movie
 
 /**
  * @author Davide Giuseppe Farella.
  */
-interface MoviesService {
+interface MoviesService: _Service {
 
-    suspend fun details( movieId: Int ): Movie
+    override val endpoint: String get() = "movie"
+
+    override val version: ApiVersion get() = ApiVersion.V3
 
     suspend fun testDetailsString( movieId: Int ): String
+
+    suspend fun details( movieId: Int ): Movie
 
 }

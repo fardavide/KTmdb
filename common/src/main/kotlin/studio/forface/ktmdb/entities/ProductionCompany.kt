@@ -14,7 +14,7 @@ data class ProductionCompany(
     val id: Int, // 25
 
     @SerialName("logo_path")
-    val logoPath: String, // /qZCc1lty5FzX30aOCVRBLzaVmcp.png
+    val logoPath: String?, // /qZCc1lty5FzX30aOCVRBLzaVmcp.png
 
     @SerialName("name")
     val name: String, // 20th Century Fox
