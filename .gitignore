@@ -25,6 +25,8 @@ hs_err_pid*
 local.properties
 .DS_Store
 
-.idea/*
-.idea/**/
-.idea/libraries/
+/.gradle/
+
+/.idea/
+
+/jdk/out/
