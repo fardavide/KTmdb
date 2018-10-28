@@ -1,5 +1,6 @@
 package studio.forface.ktmdb.api
 
+import io.ktor.client.HttpClient
 import studio.forface.ktmdb.services.MoviesService
 
 /**
@@ -12,6 +13,8 @@ interface TmdbApi {
 
         fun createInstance( apiKey: String) = TmdbApiImpl( apiKey,true )
     }
+
+    val client: HttpClient
 
     val apiKey: String
 

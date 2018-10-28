@@ -15,7 +15,7 @@ data class Movie(
     val backdropPath: String, // /fCayJrkfRaCRCTh8GqN30f8oyQF.jpg
 
     @SerialName("belongs_to_collection")
-    val belongsToCollection: Any? = null, // null
+    val belongsToCollection: String?, // null
 
     @SerialName("budget")
     val budget: Int, // 63000000

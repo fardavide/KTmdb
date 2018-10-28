@@ -1,19 +1,30 @@
 package studio.forface.ktmdb.services
 
-import studio.forface.ktmdb.api.ApiVersion
+import kotlinx.coroutines.Deferred
+import studio.forface.ktmdb.annotations.*
 import studio.forface.ktmdb.entities.Movie
+import studio.forface.ktmdb.utils.EMPTY_STRING
 
 /**
  * @author Davide Giuseppe Farella.
  */
-interface MoviesService: _Service {
+@ApiService( ApiVersion.V3,"movie" )
+interface MoviesService {
 
-    override val endpoint: String get() = "movie"
+    companion object {
+        private const val PATH_MOVIE_ID = "movieId"
+        private const val QUERY_LANGUAGE = "language"
+    }
 
-    override val version: ApiVersion get() = ApiVersion.V3
+    @GET(PATH_MOVIE_ID)
+    fun testDetailsString(
+            @Path(PATH_MOVIE_ID) movieId: Int
+    ): Deferred<String>
 
-    suspend fun testDetailsString( movieId: Int ): String
-
-    suspend fun details( movieId: Int ): Movie
+    @GET(PATH_MOVIE_ID)
+    fun details(
+            @Path(PATH_MOVIE_ID)    movieId: Int,
+            @Query(QUERY_LANGUAGE)  language: String? = null
+    ): Deferred<Movie>
 
 }
