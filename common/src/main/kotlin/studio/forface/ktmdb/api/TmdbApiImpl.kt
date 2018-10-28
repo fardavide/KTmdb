@@ -10,7 +10,7 @@ import studio.forface.ktmdb.services.MoviesService
 /**
  * @author Davide Giuseppe Farella.
  */
-class TmdbApiImpl internal constructor( override val apiKey: String, override val logging: Boolean = false ): TmdbApi {
+class TmdbApiImpl internal constructor( override val apiKey: String, override val logging: Boolean ): TmdbApi {
 
     override val client = HttpClient()
 

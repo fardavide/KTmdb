@@ -11,7 +11,7 @@ class TmdbApiTest {
 
     private val apiKey = "" // TODO
 
-    private val api = TmdbApi.createInstance( apiKey )
+    private val api = TmdbApi.createInstance( apiKey,true )
     private val testingMovieId = 551
 
     @Test // TODO HTTP test only manually

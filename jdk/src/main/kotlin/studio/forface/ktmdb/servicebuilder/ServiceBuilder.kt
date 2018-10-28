@@ -1,20 +1,19 @@
 package studio.forface.ktmdb.servicebuilder
 
 import io.ktor.client.request.get
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.JSON
 import kotlinx.serialization.serializer
 import studio.forface.ktmdb.annotations.*
 import studio.forface.ktmdb.api.TmdbApi
-import studio.forface.ktmdb.entities.Movie
 import studio.forface.ktmdb.exceptions.IllegalAnnotationException
-import java.lang.IllegalArgumentException
+import java.io.File
 import java.lang.reflect.Method
 import java.lang.reflect.Parameter
 import java.lang.reflect.Proxy
-import java.io.File
-import java.io.IOException
 import kotlin.reflect.KClass
 
 
@@ -23,7 +22,7 @@ import kotlin.reflect.KClass
  */
 actual object ServiceBuilder {
 
-    actual inline fun <reified S> createService( tmdbApi: TmdbApi ): S {
+    actual inline fun <reified S> createService(tmdbApi: TmdbApi ): S {
         val apiKey = tmdbApi.apiKey
         val baseUrl = TmdbApi.BASE_URL
         val client = tmdbApi.client
@@ -42,7 +41,6 @@ actual object ServiceBuilder {
             val apiMethod = findApiMethod( method )
 
             val url = Url("$baseUrl/$apiVersion/$endpoint/${apiMethod.s}" )
-            var hasQuery = false
 
             method.parameters
                     .mapIndexedNotNull { index, parameter ->
@@ -62,7 +60,7 @@ actual object ServiceBuilder {
             if ( logging ) println( url )
 
             GlobalScope.async {
-                when (apiMethod) {
+                when ( apiMethod ) {
                     is ApiMethod.GET -> {
                         val data = client.get<String>( url.toString() )
                         val serializer = serializerFrom( method )
@@ -112,25 +110,18 @@ actual object ServiceBuilder {
     /**
      * Scans all classes accessible from the context class loader which belong to the given package and subpackages.
      *
-     * @return The classes
-     * @throws ClassNotFoundException
-     * @throws IOException
+     * @return [List] of [KClass].
      */
-    @Throws(ClassNotFoundException::class, IOException::class)
-    private fun getClasses(): Array<KClass<*>> {
-        val classLoader = Thread.currentThread().contextClassLoader!!
+    private fun getClasses(): List<KClass<*>> {
         val path = "studio/forface/ktmdb/entities"
+        val packageName = "studio.forface.ktmdb.entities"
+
+        val classLoader = Thread.currentThread().contextClassLoader
         val resources = classLoader.getResources(path)
-        val dirs = mutableListOf<File>()
-        while ( resources.hasMoreElements() ) {
-            val resource = resources.nextElement()
-            dirs.add( File( resource.file ) )
-        }
-        val classes = mutableListOf<KClass<*>>()
-        for ( directory in dirs ) {
-            classes.addAll( findClasses( directory, path.replace('/','.' ) ) )
-        }
-        return classes.toTypedArray()
+
+        return resources.toList()
+                .map { File( it.file ) }
+                .flatMap { findClasses( it, packageName ) }
     }
 
     /**
@@ -138,27 +129,26 @@ actual object ServiceBuilder {
      *
      * @param directory   The base directory
      * @param packageName The package name for classes found inside the base directory
-     * @return The classes
-     * @throws ClassNotFoundException
+     * @return [List] of [KClass]
      */
-    @Throws(ClassNotFoundException::class)
     private fun findClasses( directory: File, packageName: String ): List<KClass<*>> {
-        val classes = mutableListOf<KClass<*>>()
-        if ( ! directory.exists() ) {
-            return classes
-        }
-        val files = directory.listFiles()
-        for ( file in files ) {
-            if ( file.isDirectory ) {
-                assert( ! file.name.contains("." ) )
-                classes.addAll( findClasses( file, packageName + "." + file.name ) )
-            } else if (file.name.endsWith(".class")) {
-                classes.add(
-                        Class.forName(packageName + '.'.toString() +
-                                file.name.substring( 0, file.name.length - 6 ) ).kotlin
+        if ( ! directory.exists() ) return emptyList()
+
+        return directory.listFiles().flatMap { file ->
+            val fileName = file.name
+            when {
+
+                file.isDirectory -> {
+                    assert( ! fileName.contains("." ) )
+                    findClasses( file, "$packageName.$fileName" )
+                }
+
+                fileName.endsWith(".class" ) -> listOf(
+                        Class.forName("$packageName.${ fileName.dropLast(6 ) }" ).kotlin
                 )
+
+                else -> emptyList()
             }
         }
-        return classes
     }
 }
