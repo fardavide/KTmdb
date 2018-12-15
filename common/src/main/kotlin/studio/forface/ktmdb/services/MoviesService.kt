@@ -2,8 +2,7 @@ package studio.forface.ktmdb.services
 
 import kotlinx.coroutines.Deferred
 import studio.forface.ktmdb.annotations.*
-import studio.forface.ktmdb.entities.Movie
-import studio.forface.ktmdb.utils.EMPTY_STRING
+import studio.forface.ktmdb.entities.MoviePojo
 
 /**
  * @author Davide Giuseppe Farella.
@@ -16,15 +15,22 @@ interface MoviesService {
         private const val QUERY_LANGUAGE = "language"
     }
 
-    @GET(PATH_MOVIE_ID)
+    @GET( PATH_MOVIE_ID )
     fun testDetailsString(
-            @Path(PATH_MOVIE_ID) movieId: Int
+            @Path( PATH_MOVIE_ID )  movieId: Int
     ): Deferred<String>
 
-    @GET(PATH_MOVIE_ID)
+    /**
+     * Get the primary information about a movie.
+     * Supports `append_to_response`. Read more about this here:
+     * @link https://developers.themoviedb.org/3/getting-started/append-to-response
+     *
+     * @link https://developers.themoviedb.org/3/movies/get-movie-details
+     */
+    @GET( PATH_MOVIE_ID )
     fun details(
-            @Path(PATH_MOVIE_ID)    movieId: Int,
-            @Query(QUERY_LANGUAGE)  language: String? = null
-    ): Deferred<Movie>
+            @Path( PATH_MOVIE_ID )      movieId: Int,
+            @Query( QUERY_LANGUAGE )    language: String? = null
+    ): Deferred<MoviePojo>
 
 }

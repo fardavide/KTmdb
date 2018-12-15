@@ -1,10 +1,6 @@
 package studio.forface.ktmdb.utils
 
-/*
- * Author: Davide Giuseppe Farella.
- */
+/* Author: Davide Giuseppe Farella */
 
-/**
- * En empty [String] "".
- */
+/** En empty [String] "" */
 internal const val EMPTY_STRING = ""

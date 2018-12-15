@@ -44,27 +44,19 @@ class Url( private var s: String ) {
         s = s.replace( old, new )
     }
 
-    /**
-     * @see String.equals
-     */
+    /** @see String.equals */
     override fun equals( other: Any? ): Boolean {
         return s == other
     }
 
-    /**
-     * @see String.plus
-     */
+    /** @see String.plus */
     private operator fun plusAssign( other: String ) {
         s += other
     }
 
-    /**
-     * @see String
-     */
+    /** @see String */
     override fun toString(): String = s
 
-    /**
-     * @see String.hashCode
-     */
+    /** @see String.hashCode */
     override fun hashCode(): Int = s.hashCode()
 }

@@ -5,9 +5,10 @@ import kotlinx.serialization.Serializable
 
 /**
  * @author Davide Giuseppe Farella.
+ * Inherit from [Pojo]
  */
 @Serializable
-data class Collection(
+data class CollectionPojo(
 
     @SerialName("backdrop_path")
     val backdropPath: String, // /kE3SAAQfWVkjJUZy1ohha8hy3LH.jpg
@@ -20,4 +21,4 @@ data class Collection(
 
     @SerialName("poster_path")
     val posterPath: String // /ngvcBGzUbPsUGaSSLOaVNG2lfLW.jpg
-)
+): Pojo

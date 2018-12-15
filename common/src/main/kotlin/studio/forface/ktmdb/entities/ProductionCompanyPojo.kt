@@ -6,9 +6,10 @@ import kotlinx.serialization.Optional
 
 /**
  * @author Davide Giuseppe Farella.
+ * Inherit from [Pojo]
  */
 @Serializable
-data class ProductionCompany(
+data class ProductionCompanyPojo(
 
     @SerialName("id")
     val id: Int, // 25
@@ -21,4 +22,4 @@ data class ProductionCompany(
 
     @SerialName("origin_country")
     val originCountry: String // US
-)
+): Pojo

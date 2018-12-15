@@ -9,9 +9,8 @@ import studio.forface.ktmdb.runTest
  */
 class TmdbApiTest {
 
-    private val apiKey = "" // TODO
 
-    private val api = TmdbApi.createInstance( apiKey,true )
+    private val api = TmdbApi( apiKey, apiV4ReadAccessToken, logging = true )
     private val testingMovieId = 551
 
     @Test // TODO HTTP test only manually
@@ -25,5 +24,11 @@ class TmdbApiTest {
         val movie = api.movies.testDetailsString( testingMovieId ).await()
         val error = movie.substring( 346 )
         println( error )
+    }
+
+    @Test // TODO HTTP test only manually
+    fun createRequestToken() = runTest {
+        val response = api.authV4.createRequestToken("" ).await()
+        println( response )
     }
 }

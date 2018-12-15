@@ -3,8 +3,7 @@ package studio.forface.ktmdb
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JSON
-import kotlinx.serialization.serializer
-import studio.forface.ktmdb.entities.Genre
+import studio.forface.ktmdb.entities.GenrePojo
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -16,7 +15,7 @@ import kotlin.test.assertEquals
  */
 class ProjectTests {
 
-    private val genre = Genre(0, "horror" )
+    private val genre = GenrePojo(0, "horror" )
 
     @Test
     fun testingMultiplatformCode_runsCorrectly() {

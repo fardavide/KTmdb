@@ -1,7 +1,6 @@
 package studio.forface.ktmdb.servicebuilder
 
-import io.ktor.client.request.get
-import kotlinx.coroutines.CoroutineScope
+import io.ktor.client.response.HttpResponse
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.serialization.KSerializer
@@ -10,26 +9,30 @@ import kotlinx.serialization.serializer
 import studio.forface.ktmdb.annotations.*
 import studio.forface.ktmdb.api.TmdbApi
 import studio.forface.ktmdb.exceptions.IllegalAnnotationException
+import studio.forface.ktmdb.utils.get
+import studio.forface.ktmdb.utils.post
 import java.io.File
 import java.lang.reflect.Method
 import java.lang.reflect.Parameter
 import java.lang.reflect.Proxy
 import kotlin.reflect.KClass
 
-
 /**
  * @author Davide Giuseppe Farella.
  */
 actual object ServiceBuilder {
 
-    actual inline fun <reified S> createService(tmdbApi: TmdbApi ): S {
+    actual inline fun <reified S> createService( tmdbApi: TmdbApi ): S {
         val apiKey = tmdbApi.apiKey
+        val accessToken = tmdbApi.apiV4ReadAccessToken
         val baseUrl = TmdbApi.BASE_URL
         val client = tmdbApi.client
         val logging = tmdbApi.logging
 
         val apiServiceAnnotation = S::class.java.getAnnotation( ApiService::class.java )
-                ?: throw IllegalAnnotationException( "The service must be annotated with ${ApiService::class.qualifiedName}" )
+                ?: throw IllegalAnnotationException(
+                        "The service must be annotated with ${ApiService::class.qualifiedName}"
+                )
         val apiVersion = apiServiceAnnotation.apiVersion
         val endpoint = apiServiceAnnotation.endpoint
 
@@ -41,6 +44,9 @@ actual object ServiceBuilder {
             val apiMethod = findApiMethod( method )
 
             val url = Url("$baseUrl/$apiVersion/$endpoint/${apiMethod.s}" )
+            val headers = if ( apiVersion == ApiVersion.V4 )
+                mapOf( "Authorization" to "Bearer $accessToken" ) else mapOf()
+            var body: Any? = null
 
             method.parameters
                     .mapIndexedNotNull { index, parameter ->
@@ -51,6 +57,7 @@ actual object ServiceBuilder {
                     .forEach {
                         val arg = it.second
                         when ( val ann = it.first ) {
+                            is ApiParams.Body ->    body = arg
                             is ApiParams.Path ->    url.setPath( ann.s, arg )
                             is ApiParams.Query ->   url.addQuery( ann.s, arg )
                         }
@@ -61,12 +68,23 @@ actual object ServiceBuilder {
 
             GlobalScope.async {
                 when ( apiMethod ) {
+
                     is ApiMethod.GET -> {
-                        val data = client.get<String>( url.toString() )
+                        val data = client.get<String>( url.toString(), headers )
                         val serializer = serializerFrom( method )
                         serializer?.let { JSON.parse( it, data ) } ?: data
                     }
-                    is ApiMethod.PUT -> TODO()
+
+                    is ApiMethod.POST -> {
+                        body ?: throw IllegalArgumentException(
+                                "POST request on '${method.name}' but no argument annotated with ${ApiParams.Body}"
+                        )
+                        val data = client.post<String>( url.toString(), headers, body!! )
+                        val serializer = serializerFrom( method )
+                        serializer?.let { JSON.parse( it, data ) } ?: data
+                    }
+
+                    is ApiMethod.PUT -> TODO("Not implemented" )
                 }
             }
         } as S
@@ -79,9 +97,12 @@ actual object ServiceBuilder {
      */
     fun findApiMethod( method: Method ): ApiMethod {
         return     method.getAnnotation( GET::class.java )?.let { ApiMethod.GET( it.s ) }
+                ?: method.getAnnotation( POST::class.java )?.let { ApiMethod.POST( it.s ) }
                 ?: method.getAnnotation( PUT::class.java )?.let { ApiMethod.PUT( it.s ) }
 
-                ?: throw IllegalAnnotationException( "No ${ApiMethod::class.qualifiedName} annotation found for method: ${method.name}" )
+                ?: throw IllegalAnnotationException(
+                        "No ${ApiMethod::class.qualifiedName} annotation found for method: ${method.name}"
+                )
     }
 
     /**
@@ -90,7 +111,8 @@ actual object ServiceBuilder {
      * @return OPTIONAL [ApiParams].
      */
     fun findApiParam( parameter: Parameter ): ApiParams? {
-        return     parameter.getAnnotation( Path::class.java )?.let { ApiParams.Path( it.path ) }
+        return     parameter.getAnnotation( Body::class.java )?.let { ApiParams.Body }
+                ?: parameter.getAnnotation( Path::class.java )?.let { ApiParams.Path( it.path ) }
                 ?: parameter.getAnnotation( Query::class.java )?.let { ApiParams.Query( it.query ) }
     }
 
