@@ -2,6 +2,7 @@ package studio.forface.ktmdb.api
 
 import io.ktor.client.HttpClient
 import studio.forface.ktmdb.servicebuilder.ServiceBuilder
+import studio.forface.ktmdb.services.AuthV3Service
 import studio.forface.ktmdb.services.AuthV4Service
 import studio.forface.ktmdb.services.MoviesService
 import kotlin.properties.ReadOnlyProperty
@@ -17,6 +18,9 @@ interface TmdbApi {
         const val BASE_URL = "https://api.themoviedb.org"
     }
 
+    /** An authorized access token for Api V4 */
+    var accessToken: String?
+
     /** The [String] key for Api V3 */
     val apiKey: String
 
@@ -31,6 +35,12 @@ interface TmdbApi {
 
     /** A [ServiceBuilder] for create the Services */
     val serviceBuilder: ServiceBuilder
+
+    /** A session ID for Api V3. It could be a guest session or an user session */
+    var sessionId: String?
+
+    /** A service for *Auth* ( Api version. 3 ) endpoint */
+    val authV3: AuthV3Service
 
     /** A service for *Auth* ( Api version. 4 ) endpoint */
     val authV4: AuthV4Service
@@ -59,7 +69,7 @@ inline fun <reified S> TmdbApi.service() = object : ReadOnlyProperty<TmdbApi, S>
 fun TmdbApi(
         apiKey: String,
         apiV4ReadAccessToken: String,
-        client: HttpClient = HttpClient(),
+        client: HttpClient = HttpClient(), // TODO logging
         logging: Boolean = false,
         serviceBuilder: ServiceBuilder = ServiceBuilder
 ): TmdbApi = TmdbApiImpl(
