@@ -4,6 +4,7 @@ apply plugin: 'kotlinx-serialization'
 archivesBaseName = 'ktmdb-common'
 
 dependencies {
+  implementation deps.klock
   implementation deps.kotlin.stdlib.common
   implementation deps.kotlin.coroutines.common
   implementation deps.kotlin.serialization.common

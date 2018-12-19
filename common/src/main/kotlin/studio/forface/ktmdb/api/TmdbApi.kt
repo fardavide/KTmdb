@@ -4,6 +4,7 @@ import io.ktor.client.HttpClient
 import studio.forface.ktmdb.servicebuilder.ServiceBuilder
 import studio.forface.ktmdb.services.AuthV3Service
 import studio.forface.ktmdb.services.AuthV4Service
+import studio.forface.ktmdb.services.DiscoverService
 import studio.forface.ktmdb.services.MoviesService
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -44,6 +45,9 @@ interface TmdbApi {
 
     /** A service for *Auth* ( Api version. 4 ) endpoint */
     val authV4: AuthV4Service
+
+    /** A service for *Discover* endpoint */
+    val discover: DiscoverService
 
     /** A Service for *Movies* endpoint */
     val movies: MoviesService

@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 
 /**
  * @author Davide Giuseppe Farella.
+ * Inherit from [Pojo]
  */
 @Serializable
 data class SpokenLanguage(
@@ -14,4 +15,4 @@ data class SpokenLanguage(
 
     @SerialName("name")
     val name: String // English
-)
+) : Pojo

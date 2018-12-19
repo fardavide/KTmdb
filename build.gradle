@@ -10,6 +10,7 @@ buildscript {
   ext.buildConfig.version['code'] = buildConfig.version.major * 10000 + buildConfig.version.minor * 100 + buildConfig.version.patch * 1
 
   ext.versions = [
+    klock:                      '1.0.0',
     kotlin:                     '1.3.11',
     kotlinCoroutines:           '1.0.1',
     kotlinSerialization:        '0.8.3-rc13',
@@ -58,10 +59,12 @@ buildscript {
       jdk:                      "com.jakewharton.timber:timber-jdk:$versions.timber",
       js:                       "com.jakewharton.timber:timber-js:$versions.timber",
     ],
-    junit:                          'junit:junit:4.12',
-    truth:                          'com.google.truth:truth:0.42',
-    argparser:                      'com.xenomachina:kotlin-argparser:2.0.5',
-    byteunits:                      'com.jakewharton.byteunits:byteunits:0.9.1',
+
+    argparser:                  'com.xenomachina:kotlin-argparser:2.0.5',
+    byteunits:                  'com.jakewharton.byteunits:byteunits:0.9.1',
+    junit:                      'junit:junit:4.12',
+    klock:                      "com.soywiz:klock:$versions.klock",
+    truth:                      'com.google.truth:truth:0.42',
   ]
 
 
@@ -70,6 +73,7 @@ buildscript {
     google()
     maven { url "https://kotlin.bintray.com/kotlinx" }
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url "https://dl.bintray.com/soywiz/soywiz" }
     gradlePluginPortal()
     jcenter()
   }
@@ -93,6 +97,7 @@ allprojects {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     maven { url "https://kotlin.bintray.com/ktor" }
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url "https://dl.bintray.com/soywiz/soywiz" }
     jcenter()
   }
 

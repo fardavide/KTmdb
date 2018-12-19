@@ -1,5 +1,6 @@
 package studio.forface.ktmdb.services
 
+import io.ktor.client.response.HttpResponse
 import kotlinx.coroutines.Deferred
 import studio.forface.ktmdb.annotations.*
 import studio.forface.ktmdb.entities.auth.GuestSessionPojo
@@ -72,6 +73,8 @@ interface AuthV3Service {
      * sure it's the end user doing the guest session actions.
      *
      * If a guest session is not used for the first time within 24 hours, it will be automatically deleted.
+     *
+     * @link https://developers.themoviedb.org/3/authentication/create-guest-session
      */
     @GET("$PATH_GUEST_SESSION/new" )
     fun createGuestSession() : Deferred<GuestSessionPojo>
@@ -80,6 +83,8 @@ interface AuthV3Service {
      * Create a temporary request token that can be used to validate a TMDb user login. More details about how this
      * works can be found here.
      * @link https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
+     *
+     * @link https://developers.themoviedb.org/3/authentication/create-request-token
      */
     @GET("$PATH_TOKEN/new" )
     fun createRequestToken() : Deferred<RequestTokenV3Pojo>
@@ -88,6 +93,8 @@ interface AuthV3Service {
      * You can use this method to create a fully valid session ID once a user has validated the request token. More
      * information about how this works can be found here.
      * @link https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
+     *
+     * @link https://developers.themoviedb.org/3/authentication/create-session
      */
     @POST("$PATH_SESSION/new" )
     fun createSession( @Body requestToken: String ) : Deferred<SessionPojo>
@@ -101,7 +108,28 @@ interface AuthV3Service {
      * @link https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
      *
      * If you decide to use this method please use HTTPS.
+     *
+     * @link https://developers.themoviedb.org/3/authentication/validate-request-token
      */
+    @Deprecated("Method not secure", ReplaceWith("AuthV3Service.createSession" ) )
     @POST("$PATH_TOKEN/validate_with_login" )
     fun createSessionWithLogin() : Deferred<RequestTokenV3Pojo>
+
+    /**
+     * Use this method to create a v3 session ID if you already have a valid v4 access token. The v4 token needs to be
+     * authenticated by the user. Your standard "read token" will not validate to create a session ID.
+     * @see AuthV4Service.createAccessToken
+     *
+     * @link https://developers.themoviedb.org/3/authentication/create-session-from-v4-access-token
+     */
+    @POST("$PATH_SESSION/convert/4" )
+    fun createSessionWithV4Token( @Body accessToken: String ) : Deferred<SessionPojo>
+
+    /**
+     * If you would like to delete (or "logout") from a session, call this method with a valid session ID.
+     *
+     * @link https://developers.themoviedb.org/3/authentication/delete-session
+     */
+    @DELETE( PATH_SESSION )
+    fun deleteSession( @Body accessToken: String ) : Deferred<HttpResponse>
 }

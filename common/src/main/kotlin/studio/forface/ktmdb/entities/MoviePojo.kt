@@ -83,4 +83,4 @@ data class MoviePojo(
 
         @SerialName("vote_count")
         val voteCount: Int // 3439
-): Pojo
+) : Pojo

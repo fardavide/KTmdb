@@ -1,11 +1,11 @@
 package studio.forface.ktmdb.servicebuilder
 
 import io.ktor.client.call.call
-import io.ktor.client.request.forms.append
-import io.ktor.client.request.forms.formData
+import io.ktor.client.request.forms.*
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
 import io.ktor.client.request.request
+import io.ktor.content.TextContent
 import io.ktor.http.HttpMethod
 import io.ktor.http.takeFrom
 import kotlinx.coroutines.GlobalScope
@@ -19,6 +19,7 @@ import studio.forface.ktmdb.exceptions.IllegalAnnotationException
 import studio.forface.ktmdb.utils.get
 import studio.forface.ktmdb.utils.post
 import java.io.File
+import java.lang.StringBuilder
 import java.lang.reflect.Method
 import java.lang.reflect.Parameter
 import java.lang.reflect.Proxy
@@ -28,6 +29,9 @@ import kotlin.reflect.KClass
  * @author Davide Giuseppe Farella.
  */
 actual object ServiceBuilder {
+
+    /** An instance of [JSON] */
+    val json = JSON( strictMode = false )
 
     actual inline fun <reified S> createService( tmdbApi: TmdbApi ): S {
         val accessToken = { tmdbApi.accessToken ?: tmdbApi.apiV4ReadAccessToken }
@@ -94,11 +98,9 @@ actual object ServiceBuilder {
                 // Set the url
                 url { _ ->
                     // Base url with paths
-                    val rawUrl = "$baseUrl/$apiVersion/$endpoint/${apiMethod.s}"
-                    val parsedUrl = rawUrl.apply {
-                        paths.forEach { replace( it.first.s, it.second ) }
-                    }
-                    takeFrom( parsedUrl )
+                    var rawUrl = "$baseUrl/$apiVersion/$endpoint/${apiMethod.s}"
+                    paths.forEach { rawUrl = rawUrl.replace( it.first.s.toRegex(), it.second ) }
+                    takeFrom( rawUrl )
 
                     // Queries
                     queries.forEach {
@@ -118,13 +120,15 @@ actual object ServiceBuilder {
                 paramBody?.let { body = it.second }
 
                 // Set the fields
-                if ( hasFields ) body = formData {
+                if ( hasFields ) body = MultiPartFormDataContent( formData {
                     fields.forEach { append( it.first.s, it.second ) }
-                }
+                } )
+
+                //if ( hasFields ) body = fields.map { it.first.s to it.second }.toMap()
             }
 
             val serializer = serializerFrom( method )
-            serializer?.let { JSON.parse( it, data ) } ?: data
+            serializer?.let { json.parse( it, data ) } ?: data
         } } as S
     }
 

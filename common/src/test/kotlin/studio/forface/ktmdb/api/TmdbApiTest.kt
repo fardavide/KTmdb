@@ -27,8 +27,26 @@ class TmdbApiTest {
     }
 
     @Test // TODO HTTP test only manually
-    fun createRequestToken() = runTest {
+    fun createGuestSession() = runTest {
+        val response = api.authV3.createGuestSession().await()
+        println( response )
+    }
+
+    @Test // TODO HTTP test only manually
+    fun createRequestTokenV4() = runTest {
         val response = api.authV4.createRequestToken("" ).await()
+        println( response )
+    }
+
+    @Test // TODO HTTP test only manually
+    fun deleteSessionV3() = runTest {
+        val response  = api.authV3.deleteSession("dc3e51e1ca72d1a4266a946b9e811b94" ).await()
+        println( response )
+    }
+
+    @Test // TODO HTTP test only manually
+    fun discoverMovies() = runTest {
+        val response = api.discover.movieDiscover().await()
         println( response )
     }
 }

@@ -4,6 +4,7 @@ import io.ktor.client.HttpClient
 import studio.forface.ktmdb.servicebuilder.ServiceBuilder
 import studio.forface.ktmdb.services.AuthV3Service
 import studio.forface.ktmdb.services.AuthV4Service
+import studio.forface.ktmdb.services.DiscoverService
 import studio.forface.ktmdb.services.MoviesService
 
 /**
@@ -32,6 +33,9 @@ class TmdbApiImpl internal constructor(
 
     /** @see TmdbApi.authV4 */
     override val authV4 by service<AuthV4Service>()
+
+    /** @see TmdbApi.discover */
+    override val discover by service<DiscoverService>()
 
     /** @see TmdbApi.movies */
     override val movies by service<MoviesService>()
